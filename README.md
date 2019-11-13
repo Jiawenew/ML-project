@@ -1,2 +1,2 @@
 # ML-project
-A machine learning project
+A project for COMP9417.
