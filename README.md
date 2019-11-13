@@ -1,2 +1,2 @@
 # ML-project
-A project for COMP9417.
+COMP9417 Project.
