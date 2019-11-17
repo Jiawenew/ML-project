@@ -1,7 +1,7 @@
 ## this document is used to deal the FlourishingScale of Output
-# Step 1: fill the data(use 0 to fill in the gap of data) -- success
+# Step 1: fill the data(use 0 to fill in the gap of data) -- Success
 # Step 2: compute the scores of flourishing  -- Success
-# Step 3: use min-max Scale to deal the result of Step 2
+# Step 3: use min-max Scale to deal the result of Step 2 -- Success
 
 import pandas as pd
 
