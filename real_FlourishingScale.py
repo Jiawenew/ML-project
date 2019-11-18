@@ -4,6 +4,7 @@
 # Step 3: use min-max Scale to deal the result of Step 2 -- Success
 
 import pandas as pd
+# import re
 
 def flourishing_Scale():
 	data = pd.read_csv('StudentLife_Dataset/Outputs/FlourishingScale.csv')
@@ -31,6 +32,30 @@ def flourishing_Scale():
 	for i in range(0, 46):
 		value_Scale = ((data_pre['Sum_value']-sum_min)/valueD)
 
-	print(value_Scale)
+	# print(value_Scale)
+
+	## the lost tester
+	lose_tester = []
+	# tester = data_pre['uid']
+	# tester = re.sub()
+	t1 = []
+	for i in range(0,60):
+		if i<10:
+			t1.append('u0' + str(i))
+		else:
+			t1.append('u' + str(i))
+
+	for x in range(0,60):
+		if data_pre.iloc[x, 'uid'] != t1[x]:
+			lose_tester.append(t1[x])
+		else:
+			continue
+
+		# print(data_pre.loc[i, 'uid'])
+		# if tester[i] != t1:
+		# 	lose_tester.append(t1)
+		# else:
+		# 	continue
+	print(lose_tester)
 
 flourishing_Scale()
