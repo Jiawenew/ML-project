@@ -48,6 +48,18 @@ def flourishing_Scale():
 			lose_tester.append(t1)
 		else:
 			p = p+1
-	print(lose_tester)
+	# print(lose_tester)
+
+	## classification
+	average = value_Scale.mean() # get the mean as threshold
+	class_Num = [] # store the classification of each user
+	for i in range(len(value_Scale)):
+		if value_Scale[i] <= average:
+			class_Num.append(0)
+		else:
+			class_Num.append(1)
+
+	print(class_Num)
+
 
 flourishing_Scale()
