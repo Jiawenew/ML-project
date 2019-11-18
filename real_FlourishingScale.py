@@ -36,26 +36,18 @@ def flourishing_Scale():
 
 	## the lost tester
 	lose_tester = []
-	# tester = data_pre['uid']
-	# tester = re.sub()
-	t1 = []
+	tester = data_pre['uid']
+	p = 0
 	for i in range(0,60):
 		if i<10:
-			t1.append('u0' + str(i))
+			t1 = 'u0' + str(i)
 		else:
-			t1.append('u' + str(i))
+			t1 = 'u' + str(i)
 
-	for x in range(0,60):
-		if data_pre.iloc[x, 'uid'] != t1[x]:
-			lose_tester.append(t1[x])
+		if tester.iat[p] != t1:
+			lose_tester.append(t1)
 		else:
-			continue
-
-		# print(data_pre.loc[i, 'uid'])
-		# if tester[i] != t1:
-		# 	lose_tester.append(t1)
-		# else:
-		# 	continue
+			p = p+1
 	print(lose_tester)
 
 flourishing_Scale()
