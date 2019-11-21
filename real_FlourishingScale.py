@@ -1,15 +1,13 @@
 ## this document is used to deal the FlourishingScale of Output
 # Step 1: fill the data(use 0 to fill in the gap of data) -- Success
 # Step 2: compute the scores of flourishing  -- Success
-# Step 3: use min-max Scale to deal the result of Step 2 -- Success
+# Step 3: classify users and use mean value as threshold -- Success
 
 import pandas as pd
-# import re
 
 def flourishing_Scale():
 	data = pd.read_csv('StudentLife_Dataset/Outputs/FlourishingScale.csv')
 	data_pre = data.iloc[0:46].copy() # select the data which type is 'pre' # if not copy, there is Hidden chaining
-
 	#problem: why data_pre = data_pre.fillna(0, inplace =Ture) input  None --- inplace = True is 
 	data_pre = data_pre.fillna(value = 0) #fill all Nan value with zero
 	# data_pre1 = data_pre.replace('', 0, inplace =True)
@@ -31,8 +29,7 @@ def flourishing_Scale():
 	valueD = sum_max-sum_min
 	for i in range(0, 46):
 		value_Scale = ((data_pre['Sum_value']-sum_min)/valueD)
-
-	# print(value_Scale)
+	print(value_Scale)
 
 	## the lost tester
 	lose_tester = []
@@ -43,15 +40,15 @@ def flourishing_Scale():
 			t1 = 'u0' + str(i)
 		else:
 			t1 = 'u' + str(i)
-
+		#judge
 		if tester.iat[p] != t1:
 			lose_tester.append(t1)
 		else:
 			p = p+1
-	# print(lose_tester)
+	print(lose_tester)
 
 	## classification
-	average = value_Scale.mean() # get the mean as threshold
+	average = value_Scale.mean() # get the mean as threshold  ---- use median value as threshold??
 	class_Num = [] # store the classification of each user
 	for i in range(len(value_Scale)):
 		if value_Scale[i] <= average:
